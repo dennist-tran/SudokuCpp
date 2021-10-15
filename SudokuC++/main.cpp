@@ -18,16 +18,21 @@ int main()
 		{0,0,0,4,1,9,0,0,5},
 		{0,0,0,0,8,0,0,7,9},
 	};
-	cout << "=====================" << endl;
-	cout << "Original Board:" << endl;
-	cout << "=====================" << endl;
+	std::cout << "=====================" << endl;
+	std::cout << "Input Board:" << endl;
+	std::cout << "=====================" << endl;
 	printBoard(board);
-	cout << endl;
 
-	backtrack(board, 0, 0);
-	cout << "=====================" << endl;
-	cout << "Solved Board:" << endl;
-	cout << "=====================" << endl;
-	printBoard(board);
+	int solution[9][9];
+
+	if (!backtrack(board, 0, 0))
+		std::cout << "Solution Failed" << endl;
+	else
+	{
+		std::cout << "=====================" << endl;
+		std::cout << "Output Board:" << endl;
+		std::cout << "=====================" << endl;
+		printBoard(board);
+	}
 	return 0;
 }

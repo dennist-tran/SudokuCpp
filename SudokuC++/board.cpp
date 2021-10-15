@@ -21,8 +21,6 @@ void printBoard(int board[9][9])
 
 bool checkValid(int board[9][9], int row, int col, int value)
 {
-	if (board[row][col] != 0) return false;
-
 	int box_x = (col / 3) * 3;
 	int box_y = (row / 3) * 3;
 	for (int i = 0; i < 9; i++)
@@ -34,10 +32,35 @@ bool checkValid(int board[9][9], int row, int col, int value)
 	return true;
 }
 
-int addValue(int board[9][9], int row, int col, int value)
+bool addValue(int board[9][9], int row, int col, int value)
 {
-	if (!checkValid(board, row, col, value)) return 0;
+	if (!checkValid(board, row, col, value)) return false;
 
 	board[row][col] = value;
-	return 1;
+	return true;
+}
+
+void copyBoard(int board[9][9], int copy[9][9])
+{
+	for (int i = 0; i < 9; i++)
+		for (int j = 0; j < 9; j++)
+			copy[i][j] = board[i][j];
+}
+
+bool validateBoard(int board[9][9])
+{
+	for (int i = 0; i < 9; i++)
+		for (int j = 0; j < 9; j++)
+			if (board[i][j] != 0)
+			{
+				int value = board[i][j];
+				board[i][j] = 0;
+				if (!checkValid(board, i, j, value))
+				{
+					board[i][j] = value;
+					return false;
+				}
+				board[i][j] = value;
+			}
+	return true;
 }
