@@ -24,12 +24,18 @@
     <ClCompile Include="solve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="generate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="solve.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="generate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

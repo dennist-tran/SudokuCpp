@@ -6,7 +6,7 @@ void printBoard(int board[9][9]);
 // Checks input against row, column, and the local 3x3 grid for repeated values.
 bool checkValid(int board[9][9], int row, int col, int value);
 
-// Adds input to 'board', given that it is valid.
+// Adds the value to 'board', if it is valid.
 bool addValue(int board[9][9], int row, int col, int value);
 
 // Copies all values of 'board' to 'copy'

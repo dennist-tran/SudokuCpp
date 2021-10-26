@@ -22,9 +22,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="board.cpp" />
     <ClCompile Include="solve.cpp" />
+    <ClCompile Include="generate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
+    <ClInclude Include="generate.h" />
     <ClInclude Include="solve.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
